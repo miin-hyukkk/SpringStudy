@@ -1,9 +1,11 @@
 package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
+//@Repository //컴포넌트 스캔방법
 public class MemoryMemberRepository implements MemberRepository{
     //저장을 해놔야지 맵으로 , 실무에서는 공유되는 변수면 동시성문제때문에 concurrent 써야되는데 이건 그냥 예제니까 hashmap 사용
     //hashmap: map 인터페이스를 구현한 대표적인 map 컬렉션, 값은 중복저장 가능 키는 중복저장 불가능

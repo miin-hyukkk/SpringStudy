@@ -21,7 +21,7 @@ public class HelloController {
         return "hello-template";
     }
     @GetMapping("hello-string")
-    @ResponseBody//html에 나오는 바디가 아니라 https에 header부와 body부가 있는데 그 body부에 저 return 내용을 직접 넣어주겠다는거임
+    @ResponseBody//html에 나오는 바디가 아니라 http에 header부와 body부가 있는데 그 body부에 저 return 내용을 직접 넣어주겠다는거임
     public String helloString(@RequestParam("name") String name){
         return "hello " + name; //"hello spring" 요청한게 그대로 내려감 view 이런게 없어  html을 겪지 않는거지
     }
@@ -36,10 +36,10 @@ public class HelloController {
         hello.setName(name);
         return hello;
     }
-    //스테틱으로 만들면 클래스안에서 또 이렇게 클래스를 사용 가능
+    //스테틱으로 만들면 클래스안에서 또 이렇게 클래스를 사용 가능 , helloController 안에 또 hello 라는 클래스 사용
     static class Hello {
         //
-        private String name;
+        private String name;//private이니까 게터세터로 접근해야해
         public String getName(){
             return name;
         }

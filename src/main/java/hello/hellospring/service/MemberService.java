@@ -8,12 +8,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-@Service
+//@Service //컴포넌트 스캔방법
 //스프링에 딱 뜰때 이거보고 서비스네 하고 오토와이어드 보고 너는 메모리멤버리포지터리가 필요하구나 하고 컨테이너에 있는 메모리멤버리포지터리를 넣어줌
 public class MemberService {
 
     private final MemberRepository memberRepository;
-    @Autowired
+//    @Autowired //컴포넌트 스캔방법
     public MemberService(MemberRepository memberRepository){
         this.memberRepository = memberRepository;
     }

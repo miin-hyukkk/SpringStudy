@@ -4,7 +4,7 @@ import hello.hellospring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-@Controller
+@Controller //이 친구는 자바 직접연결할때도 그대로둠
 //이 컨트롤러라는 에노테이션을 보고 스프링이 뜰때 이 해당 컨트롤러를 객체를 스플릿해서 들고 있음
 // 이걸 스프링 컨테이너에서 스프링 빈이 관리된다라고 함
 public class MemberController {
@@ -12,7 +12,7 @@ public class MemberController {
     private final MemberService memberService;
 
     //스프링컨테이너에 딱 하나만 등록을 하고 사용
-    @Autowired //
+    @Autowired
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
     }
